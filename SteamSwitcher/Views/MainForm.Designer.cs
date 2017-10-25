@@ -124,11 +124,10 @@
             // tvHotKeyLabel
             // 
             this.tvHotKeyLabel.AutoSize = true;
-            this.tvHotKeyLabel.Location = new System.Drawing.Point(62, 85);
+            this.tvHotKeyLabel.Location = new System.Drawing.Point(17, 92);
             this.tvHotKeyLabel.Name = "tvHotKeyLabel";
-            this.tvHotKeyLabel.Size = new System.Drawing.Size(92, 13);
+            this.tvHotKeyLabel.Size = new System.Drawing.Size(0, 13);
             this.tvHotKeyLabel.TabIndex = 12;
-            this.tvHotKeyLabel.Text = "Hotkey: Ctrl+Alt+1";
             // 
             // setTVDispalyButton
             // 
@@ -152,11 +151,11 @@
             // 
             this.activateTvPanelButton.Image = ((System.Drawing.Image)(resources.GetObject("activateTvPanelButton.Image")));
             this.activateTvPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.activateTvPanelButton.Location = new System.Drawing.Point(212, 85);
+            this.activateTvPanelButton.Location = new System.Drawing.Point(145, 85);
             this.activateTvPanelButton.Name = "activateTvPanelButton";
-            this.activateTvPanelButton.Size = new System.Drawing.Size(95, 26);
+            this.activateTvPanelButton.Size = new System.Drawing.Size(162, 26);
             this.activateTvPanelButton.TabIndex = 9;
-            this.activateTvPanelButton.Text = "Activate Both";
+            this.activateTvPanelButton.Text = "Activate Both (Ctrl+Alt+1)";
             this.activateTvPanelButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.activateTvPanelButton.UseVisualStyleBackColor = true;
             // 
@@ -208,11 +207,10 @@
             // monitorHotKeyLabel
             // 
             this.monitorHotKeyLabel.AutoSize = true;
-            this.monitorHotKeyLabel.Location = new System.Drawing.Point(56, 84);
+            this.monitorHotKeyLabel.Location = new System.Drawing.Point(12, 91);
             this.monitorHotKeyLabel.Name = "monitorHotKeyLabel";
-            this.monitorHotKeyLabel.Size = new System.Drawing.Size(92, 13);
+            this.monitorHotKeyLabel.Size = new System.Drawing.Size(0, 13);
             this.monitorHotKeyLabel.TabIndex = 13;
-            this.monitorHotKeyLabel.Text = "Hotkey: Ctrl+Alt+2";
             // 
             // setMonitorDispalyButton
             // 
@@ -236,11 +234,11 @@
             // 
             this.activateMonitorPanelButton.Image = ((System.Drawing.Image)(resources.GetObject("activateMonitorPanelButton.Image")));
             this.activateMonitorPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.activateMonitorPanelButton.Location = new System.Drawing.Point(207, 84);
+            this.activateMonitorPanelButton.Location = new System.Drawing.Point(144, 84);
             this.activateMonitorPanelButton.Name = "activateMonitorPanelButton";
-            this.activateMonitorPanelButton.Size = new System.Drawing.Size(95, 28);
+            this.activateMonitorPanelButton.Size = new System.Drawing.Size(158, 28);
             this.activateMonitorPanelButton.TabIndex = 8;
-            this.activateMonitorPanelButton.Text = "Activate Both";
+            this.activateMonitorPanelButton.Text = "Activate Both (Ctrl+Alt+2)";
             this.activateMonitorPanelButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.activateMonitorPanelButton.UseVisualStyleBackColor = true;
             // 
