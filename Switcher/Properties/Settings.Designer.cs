@@ -130,5 +130,17 @@ namespace Switcher.Properties {
                 this["AutoBPMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OnlyAudioInBPMode {
+            get {
+                return ((bool)(this["OnlyAudioInBPMode"]));
+            }
+            set {
+                this["OnlyAudioInBPMode"] = value;
+            }
+        }
     }
 }

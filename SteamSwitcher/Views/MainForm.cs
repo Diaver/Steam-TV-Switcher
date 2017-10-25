@@ -62,7 +62,17 @@ namespace SteamSwitcher.Views
         public bool IsAutoBPChecked
         {
             get { return autoBPModeCheckBox.Checked; }
-            set { autoBPModeCheckBox.Checked = value; }
+            set
+            {
+                autoBPModeCheckBox.Checked = value;
+                DisableOnlyAudioCheckboxIfRequired();
+            }
+        }
+
+        public bool IsOnlyAudioInBPModeChecked
+        {
+            get { return onlyAudioBPModeCheckBox.Checked; }
+            set { onlyAudioBPModeCheckBox.Checked = value; }
         }
 
         public bool IsViewMinimazed => WindowState == FormWindowState.Minimized;
@@ -76,12 +86,10 @@ namespace SteamSwitcher.Views
         public Action OnSettingsChanged { get; set; }
         public Action<bool> OnStartupChecked { get; set; }
         public Action<bool> OnAutoBPModeChecked { get; set; }
+        public Action<bool> OnOnlyAudioInBPModeChecked { get; set; }
 
         public void MinimazeToTray(bool showBaloon)
         {
-            if(showBaloon)
-                notifyIcon.ShowBalloonTip(1000);
-
             Hide();
             notifyIcon.Visible = true;
         }
@@ -102,7 +110,6 @@ namespace SteamSwitcher.Views
         {
             Show();
             WindowState = FormWindowState.Normal;
-            notifyIcon.Visible = false;
         }
 
         public void RunEvents()
@@ -131,14 +138,38 @@ namespace SteamSwitcher.Views
             activateTvPanelButton.Click += (s, e) => OnActivateTvPanelButtonClick();
             activateMonitorPanelButton.Click += (s, e) => OnActivateMonitorPanelButtonClick();
             Resize += (s, e) => OnFormResize();
-            notifyIcon.MouseDoubleClick += (s, e) => OnTrayIconDoubleClick();
+            notifyIcon.Click += (s, e) => OnTrayIconDoubleClick();
             startUpCheckBox.CheckStateChanged += (s, e) => OnStartupChecked(startUpCheckBox.Checked);
-            autoBPModeCheckBox.CheckStateChanged += (s, e) => OnAutoBPModeChecked(autoBPModeCheckBox.Checked);
+            autoBPModeCheckBox.CheckStateChanged += (s, e) =>
+            {
+                DisableOnlyAudioCheckboxIfRequired();
+
+                OnAutoBPModeChecked(autoBPModeCheckBox.Checked);
+            };
+            onlyAudioBPModeCheckBox.CheckStateChanged += (s, e) => OnOnlyAudioInBPModeChecked(autoBPModeCheckBox.Checked);
 
             showTrayContextMenu.Click += (s, e) => OnShowTrayContextMenuClick();
             exitTrayContextMenu.Click += (s, e) => OnExitTrayContextMenuClick();
 
             FormClosed += MainForm_FormClosed;
+        }
+
+        private void DisableOnlyAudioCheckboxIfRequired()
+        {
+            if (autoBPModeCheckBox.Checked == false)
+            {
+                onlyAudioBPModeCheckBox.Checked = false;
+                onlyAudioBPModeCheckBox.Enabled = false;
+            }
+            else
+            {
+                onlyAudioBPModeCheckBox.Enabled = true;
+            }
+        }
+
+        public void HotkeyDoesntWork()
+        {
+            monitorHotKeyLabel.Text = tvHotKeyLabel.Text = @"Can't set hotkey";
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

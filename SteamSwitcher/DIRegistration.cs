@@ -2,9 +2,11 @@
 using Switcher;
 using Switcher.Config;
 using Switcher.Controllers;
+using Switcher.HotKeys;
 using Switcher.Interfaces;
 using Switcher.Interfaces.Config;
 using Switcher.Interfaces.Controllers;
+using Switcher.Interfaces.HotKeys;
 
 namespace SteamSwitcher
 {
@@ -20,6 +22,7 @@ namespace SteamSwitcher
             _container.RegisterType<IConfigProvider, ConfigProvider>();
             _container.RegisterType<IAppStartupManager, AppStartupManager>();
             _container.RegisterType<ISwitchService, SwitchService>();
+            _container.RegisterType<IKeyboardHook, KeyboardHook>();
         }
 
         public T Resolve<T>()

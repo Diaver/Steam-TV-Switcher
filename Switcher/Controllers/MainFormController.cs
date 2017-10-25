@@ -1,10 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Switcher.Dto;
+using Switcher.HotKeys;
 using Switcher.Interfaces;
 using Switcher.Interfaces.Config;
 using Switcher.Interfaces.Controllers;
+using Switcher.Interfaces.HotKeys;
 using Switcher.Interfaces.Views;
-using Timer = System.Timers.Timer;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Switcher.Controllers
 {
@@ -15,16 +18,18 @@ namespace Switcher.Controllers
         private readonly IAppStartupManager _appStartupManager;
         private readonly ISwitchService _switchService;
         private readonly IHardwareSwitcher _hardwareSwitcher;
+        private readonly IKeyboardHook _keyboardHook;
         private IMainForm _mainForm;
         private bool _isMinimazedOnStartUp;
 
-        public MainFormController(IDevicesProvider devicesProvider, IConfigProvider configProvider, IAppStartupManager appStartupManager, ISwitchService switchService, IHardwareSwitcher hardwareSwitcher)
+        public MainFormController(IDevicesProvider devicesProvider, IConfigProvider configProvider, IAppStartupManager appStartupManager, ISwitchService switchService, IHardwareSwitcher hardwareSwitcher, IKeyboardHook keyboardHook)
         {
             _devicesProvider = devicesProvider;
             _configProvider = configProvider;
             _appStartupManager = appStartupManager;
             _switchService = switchService;
             _hardwareSwitcher = hardwareSwitcher;
+            _keyboardHook = keyboardHook;
         }
 
         public void Run(IMainForm mainForm, bool isMinimazedOnStartUp)
@@ -41,12 +46,37 @@ namespace Switcher.Controllers
             RunActivePanelTimer();
 
             StartAutoSwitchService(deviceSettings.AutoBPMode);
+            SetGlobalkeys();
+        }
+
+        private void SetGlobalkeys()
+        {
+            _keyboardHook.KeyPressed += _keyboardHook_KeyPressed;
+
+            if (!_keyboardHook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.D1) ||
+                !_keyboardHook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.D2))
+            {
+                _mainForm.HotkeyDoesntWork();
+            }
+        }
+
+        private void _keyboardHook_KeyPressed(KeyPressedEventArgs e)
+        {
+            if (e.Key == Keys.D1)
+            {
+                OnActivateTvPanelButtonClick();
+            }
+            else
+            {
+                OnActivateMonitorPanelButtonClick();
+            }
         }
 
         private void RunActivePanelTimer()
         {
-            Timer timer = new Timer(2000);
-            timer.Elapsed += (sender, e) => ActivePanelTimerTick();
+            Timer timer = new Timer {Interval = 2000};
+
+            timer.Tick += (sender, e) => ActivePanelTimerTick();
             timer.Start();
         }
 
@@ -84,6 +114,7 @@ namespace Switcher.Controllers
             _mainForm.DeviceSettings = deviceSettings;
             _mainForm.IsStartupEnabled = _appStartupManager.IsStartupEnabled();
             _mainForm.IsAutoBPChecked = deviceSettings.AutoBPMode;
+            _mainForm.IsOnlyAudioInBPModeChecked = deviceSettings.OnlyAudioInAutoBPMode;
         }
 
         private void SubscribeViewEvents()
@@ -105,6 +136,13 @@ namespace Switcher.Controllers
             _mainForm.OnSetMonitorAudioButtonClick +=OnSetMonitorAudioButtonClick;
             _mainForm.OnExitTrayContextMenuClick +=OnExitTrayContextMenuClick;
             _mainForm.OnShowTrayContextMenuClick +=OnShowTrayContextMenuClick;
+
+            _mainForm.OnOnlyAudioInBPModeChecked += OnOnlyAudioInBpModeChecked;
+        }
+
+        private void OnOnlyAudioInBpModeChecked(bool isChecked)
+        {
+            OnSettingsChangedClick();
         }
 
         private void OnShowTrayContextMenuClick()

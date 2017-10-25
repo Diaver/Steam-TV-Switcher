@@ -11,6 +11,7 @@ namespace Switcher
     {
         private readonly IConfigProvider _configProvider;
         private readonly IHardwareSwitcher _hardwareSwitcher;
+        private readonly IDevicesProvider _devicesProvider;
 
         [DllImport("user32.dll", EntryPoint = "FindWindow")]
         private static extern int FindWindow(string sClass, string sWindow);
@@ -19,10 +20,11 @@ namespace Switcher
 
         private Timer _timer;
 
-        public SwitchService(IConfigProvider configProvider, IHardwareSwitcher hardwareSwitcher)
+        public SwitchService(IConfigProvider configProvider, IHardwareSwitcher hardwareSwitcher, IDevicesProvider devicesProvider)
         {
             _configProvider = configProvider;
             _hardwareSwitcher = hardwareSwitcher;
+            _devicesProvider = devicesProvider;
             InitTimer();
         }
 
@@ -47,6 +49,8 @@ namespace Switcher
         {
             DeviceSettings deviceSettings = _configProvider.GetDeviceSettings();
 
+            Device activeDisplay = _devicesProvider.GetActiveDisplay();
+
             int steamWorking = FindWindow("CUIEngineWin32", "Steam");
             if (steamWorking != 0 && _isSteamWorking == false)
             {
@@ -54,19 +58,19 @@ namespace Switcher
                 {
                     _hardwareSwitcher.SetDefaultPlaybackDevice(deviceSettings.SteamAudio.Name);
                 }
-                if (deviceSettings.SteamDisplay.IsEmpty() == false)
+                if (deviceSettings.SteamDisplay.IsEmpty() == false && activeDisplay.Name != deviceSettings.SteamDisplay.Name && deviceSettings.OnlyAudioInAutoBPMode == false)
                 {
                     _hardwareSwitcher.SetPrimaryDisplay(deviceSettings.SteamDisplay.Name);
                 }
                 _isSteamWorking = true;
-            }
+            } 
             else if (steamWorking == 0 && _isSteamWorking)
             {
                 if (deviceSettings.DefaultAudio.IsEmpty() == false)
                 {
                     _hardwareSwitcher.SetDefaultPlaybackDevice(deviceSettings.DefaultAudio.Name);
                 }
-                if (deviceSettings.DefaultDisplay.IsEmpty() == false)
+                if (deviceSettings.DefaultDisplay.IsEmpty() == false && activeDisplay.Name != deviceSettings.DefaultDisplay.Name)
                 {
                     _hardwareSwitcher.SetPrimaryDisplay(deviceSettings.DefaultDisplay.Name);
                 }

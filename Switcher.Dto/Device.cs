@@ -8,9 +8,6 @@
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
-
             Device device = obj as Device;
 
             if (device == null)
@@ -18,6 +15,7 @@
 
             return (Name == device.Name && Title == device.Title);
         }
+        
 
         public bool IsEmpty()
         {

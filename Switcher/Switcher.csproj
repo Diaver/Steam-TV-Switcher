@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotKeys\HotKeys.cs" />
     <Compile Include="Providers\ConfigProvider.cs" />
     <Compile Include="Controllers\MainFormController.cs" />
     <Compile Include="Providers\DevicesProvider.cs" />

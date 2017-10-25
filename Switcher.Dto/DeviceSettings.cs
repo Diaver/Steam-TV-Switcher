@@ -7,6 +7,7 @@
         public Device DefaultDisplay { get; set; }
         public Device DefaultAudio { get; set; }
         public bool AutoBPMode { get; set; }
+        public bool OnlyAudioInAutoBPMode { get; set; }
 
         public bool IsEmpty()
         {

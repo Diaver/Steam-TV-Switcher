@@ -35,6 +35,7 @@
             this.steamDisplayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.tvGroupBox = new System.Windows.Forms.GroupBox();
+            this.tvHotKeyLabel = new System.Windows.Forms.Label();
             this.setTVDispalyButton = new System.Windows.Forms.Button();
             this.setTVAudioButton = new System.Windows.Forms.Button();
             this.activateTvPanelButton = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.steamAudioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.monitorGroupBox = new System.Windows.Forms.GroupBox();
+            this.monitorHotKeyLabel = new System.Windows.Forms.Label();
             this.setMonitorDispalyButton = new System.Windows.Forms.Button();
             this.setMonitorAudioButton = new System.Windows.Forms.Button();
             this.activateMonitorPanelButton = new System.Windows.Forms.Button();
@@ -57,6 +59,9 @@
             this.showTrayContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.exitTrayContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.autoBPModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.onlyAudioBPModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.settingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.steamDisplayBindingSource)).BeginInit();
             this.tvGroupBox.SuspendLayout();
@@ -65,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.defaultAudioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultDisplayBindingSource)).BeginInit();
             this.trayContextMenu.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // steamDisplayComboBox
@@ -100,6 +106,7 @@
             // 
             // tvGroupBox
             // 
+            this.tvGroupBox.Controls.Add(this.tvHotKeyLabel);
             this.tvGroupBox.Controls.Add(this.setTVDispalyButton);
             this.tvGroupBox.Controls.Add(this.setTVAudioButton);
             this.tvGroupBox.Controls.Add(this.activateTvPanelButton);
@@ -107,12 +114,21 @@
             this.tvGroupBox.Controls.Add(this.label2);
             this.tvGroupBox.Controls.Add(this.steamDisplayComboBox);
             this.tvGroupBox.Controls.Add(this.label1);
-            this.tvGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.tvGroupBox.Location = new System.Drawing.Point(12, 29);
             this.tvGroupBox.Name = "tvGroupBox";
             this.tvGroupBox.Size = new System.Drawing.Size(313, 122);
             this.tvGroupBox.TabIndex = 2;
             this.tvGroupBox.TabStop = false;
             this.tvGroupBox.Text = "TV";
+            // 
+            // tvHotKeyLabel
+            // 
+            this.tvHotKeyLabel.AutoSize = true;
+            this.tvHotKeyLabel.Location = new System.Drawing.Point(62, 85);
+            this.tvHotKeyLabel.Name = "tvHotKeyLabel";
+            this.tvHotKeyLabel.Size = new System.Drawing.Size(92, 13);
+            this.tvHotKeyLabel.TabIndex = 12;
+            this.tvHotKeyLabel.Text = "Hotkey: Ctrl+Alt+1";
             // 
             // setTVDispalyButton
             // 
@@ -173,6 +189,7 @@
             // 
             // monitorGroupBox
             // 
+            this.monitorGroupBox.Controls.Add(this.monitorHotKeyLabel);
             this.monitorGroupBox.Controls.Add(this.setMonitorDispalyButton);
             this.monitorGroupBox.Controls.Add(this.setMonitorAudioButton);
             this.monitorGroupBox.Controls.Add(this.activateMonitorPanelButton);
@@ -181,12 +198,21 @@
             this.monitorGroupBox.Controls.Add(this.defaultDisplayComboBox);
             this.monitorGroupBox.Controls.Add(this.label4);
             this.monitorGroupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.monitorGroupBox.Location = new System.Drawing.Point(331, 13);
+            this.monitorGroupBox.Location = new System.Drawing.Point(331, 30);
             this.monitorGroupBox.Name = "monitorGroupBox";
             this.monitorGroupBox.Size = new System.Drawing.Size(308, 122);
             this.monitorGroupBox.TabIndex = 4;
             this.monitorGroupBox.TabStop = false;
             this.monitorGroupBox.Text = "Monitor";
+            // 
+            // monitorHotKeyLabel
+            // 
+            this.monitorHotKeyLabel.AutoSize = true;
+            this.monitorHotKeyLabel.Location = new System.Drawing.Point(56, 84);
+            this.monitorHotKeyLabel.Name = "monitorHotKeyLabel";
+            this.monitorHotKeyLabel.Size = new System.Drawing.Size(92, 13);
+            this.monitorHotKeyLabel.TabIndex = 13;
+            this.monitorHotKeyLabel.Text = "Hotkey: Ctrl+Alt+2";
             // 
             // setMonitorDispalyButton
             // 
@@ -273,7 +299,7 @@
             // startUpCheckBox
             // 
             this.startUpCheckBox.AutoSize = true;
-            this.startUpCheckBox.Location = new System.Drawing.Point(368, 141);
+            this.startUpCheckBox.Location = new System.Drawing.Point(487, 30);
             this.startUpCheckBox.Name = "startUpCheckBox";
             this.startUpCheckBox.Size = new System.Drawing.Size(129, 17);
             this.startUpCheckBox.TabIndex = 6;
@@ -311,20 +337,52 @@
             // autoBPModeCheckBox
             // 
             this.autoBPModeCheckBox.AutoSize = true;
-            this.autoBPModeCheckBox.Location = new System.Drawing.Point(508, 141);
+            this.autoBPModeCheckBox.Location = new System.Drawing.Point(37, 19);
             this.autoBPModeCheckBox.Name = "autoBPModeCheckBox";
-            this.autoBPModeCheckBox.Size = new System.Drawing.Size(131, 17);
+            this.autoBPModeCheckBox.Size = new System.Drawing.Size(229, 17);
             this.autoBPModeCheckBox.TabIndex = 8;
-            this.autoBPModeCheckBox.Text = "Auto Big Picture mode";
+            this.autoBPModeCheckBox.Text = "Wait for Big Picture mode and switch to TV";
             this.autoBPModeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.onlyAudioBPModeCheckBox);
+            this.groupBox1.Controls.Add(this.autoBPModeCheckBox);
+            this.groupBox1.Controls.Add(this.startUpCheckBox);
+            this.groupBox1.Location = new System.Drawing.Point(13, 154);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(626, 72);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Settings";
+            // 
+            // onlyAudioBPModeCheckBox
+            // 
+            this.onlyAudioBPModeCheckBox.AutoSize = true;
+            this.onlyAudioBPModeCheckBox.Location = new System.Drawing.Point(56, 43);
+            this.onlyAudioBPModeCheckBox.Name = "onlyAudioBPModeCheckBox";
+            this.onlyAudioBPModeCheckBox.Size = new System.Drawing.Size(221, 17);
+            this.onlyAudioBPModeCheckBox.TabIndex = 9;
+            this.onlyAudioBPModeCheckBox.Text = "Switch only TV Audio in Big Picture mode";
+            this.onlyAudioBPModeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(37, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(511, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Strongly recommended: Set main display for Big Picture from: Big Picture -> Setti" +
+    "ng -> Display - > Resolution";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 168);
-            this.Controls.Add(this.autoBPModeCheckBox);
-            this.Controls.Add(this.startUpCheckBox);
+            this.ClientSize = new System.Drawing.Size(651, 238);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.monitorGroupBox);
             this.Controls.Add(this.tvGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -343,6 +401,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.defaultAudioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultDisplayBindingSource)).EndInit();
             this.trayContextMenu.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,6 +437,11 @@
         private System.Windows.Forms.Button setMonitorAudioButton;
         private System.Windows.Forms.ToolStripMenuItem showTrayContextMenu;
         private System.Windows.Forms.ToolStripMenuItem exitTrayContextMenu;
+        private System.Windows.Forms.Label tvHotKeyLabel;
+        private System.Windows.Forms.Label monitorHotKeyLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox onlyAudioBPModeCheckBox;
+        private System.Windows.Forms.Label label5;
     }
 }
 

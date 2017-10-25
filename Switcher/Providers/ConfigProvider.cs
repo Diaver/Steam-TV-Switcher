@@ -29,7 +29,8 @@ namespace Switcher.Config
                     Name = Properties.Settings.Default.DefaultAudioName,
                     Title = Properties.Settings.Default.DefaultAudioTitle,
                 },
-                AutoBPMode = Properties.Settings.Default.AutoBPMode
+                AutoBPMode = Properties.Settings.Default.AutoBPMode,
+                OnlyAudioInAutoBPMode = Properties.Settings.Default.OnlyAudioInBPMode
             };
         }
 
@@ -44,6 +45,7 @@ namespace Switcher.Config
             Properties.Settings.Default.DefaultAudioName = deviceSettings.DefaultAudio.Name;
             Properties.Settings.Default.DefaultAudioTitle = deviceSettings.DefaultAudio.Title;
             Properties.Settings.Default.AutoBPMode = deviceSettings.AutoBPMode;
+            Properties.Settings.Default.OnlyAudioInBPMode = deviceSettings.OnlyAudioInAutoBPMode;
 
             Properties.Settings.Default.Save();
         }

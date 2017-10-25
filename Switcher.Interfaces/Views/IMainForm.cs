@@ -47,6 +47,10 @@ namespace Switcher.Interfaces.Views
 
         Action<bool> OnAutoBPModeChecked { get; set; }
 
+        Action<bool> OnOnlyAudioInBPModeChecked { get; set; }
+
+        bool IsOnlyAudioInBPModeChecked{ get; set; }
+
         void MinimazeToTray(bool showBaloon);
 
         void SetActiveTVPanel();
@@ -56,5 +60,7 @@ namespace Switcher.Interfaces.Views
         void MaximazeFromTray();
 
         void RunEvents();
+
+        void HotkeyDoesntWork();
     }
 }

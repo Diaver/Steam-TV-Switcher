@@ -123,12 +123,6 @@
   <metadata name="steamDisplayBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="settingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="steamDisplayBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="setTVDispalyButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -164,23 +158,20 @@
   </data>
   <data name="activateTvPanelButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJaSURBVDhPlZNtT1JhGMf5CH2E3oQPyKMICj4QhbnCYPkwKB2YFaZo5wihYhKV1QtemBvVetWq
-        ldXWaGu1HrTTatlaK3MojweQikxfRN/g332AzTaU5X+73pz7/l/39buu6/A47TpwJ8DX3wX/4MzNMuOD
-        HbmP2xG/9R6O+pJopj5A0BnIlrcHrIWj/1OZ8SE6vDE0O0MwjIeh6GVQaXrCVJqfSgpXSqu87REOeeKo
-        6VtE7UAQOlcMGnoJIsscBF0vpqq6X5bGquh4DMNEHIr+IJT2JdQOLUNNR6Bzp1BPLUDcw2SFlrmtsUi5
-        0J9h8+ZTIdTRYagcEahPR6GbSKJ1MgXl4CcIexiGRDFW5eFnaHGzObNqOIw6ZxRyOgoZCQkVg9zJYt9k
-        GvqLLKr73nOJpoTW1xtYgq7n0I0moKTCEA2EILRHIKXjkLsSUIwloSQoXGjOrcDkz6DJtcAloQp2Hq+q
-        +xVUNIsK2zKEgxHIHKQfxKjypNFw/jsaL+SjxZeB+dpPaMYWIep9+08Cyyxk9jgE/WFIh/NmtfcbNJcy
-        2Otbxf7pNVhv/0an/weU9BeIbfPegjUvwkMOWIiGCPtIAqqzaey+nEHLlTUcuZWF7X4WWm8csqGvjNT+
-        eWfBtiGhlYHalYSEjuVYuXIN/nUcn/mDtqu/UOOKpuSOkLFwvVikIWgiRo69gbxuvrEO0/VV1JPR1oyw
-        XsVoovQicQhaTwp7SJfbpzNodIdQTQUZuSNcXO5mIltGZrwC7fgyJCc/pgjn1uVuJjIFsmFvIDr2zis+
-        Mb+N35nH+wu1KGLX5Vm7IQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAlpJREFUOE+V
+        k21PUmEYx/kIfYTehA/IowgKPhCFucJg+TAoHZgVpmjnCKFiEpXVC16YG9V61aqV1dZoa7UetNNq2Vor
+        cyiPB5CKTF9E3+DffYDNNpTlf7venPv+X/f1u67r8DjtOnAnwNffBf/gzM0y44MduY/bEb/1Ho76kmim
+        PkDQGciWtweshaP/U5nxITq8MTQ7QzCMh6HoZVBpesJUmp9KCldKq7ztEQ554qjpW0TtQBA6Vwwaegki
+        yxwEXS+mqrpflsaq6HgMw0Qciv4glPYl1A4tQ01HoHOnUE8tQNzDZIWWua2xSLnQn2Hz5lMh1NFhqBwR
+        qE9HoZtIonUyBeXgJwh7GIZEMVbl4WdocbM5s2o4jDpnFHI6ChkJCRWD3Mli32Qa+ossqvvec4mmhNbX
+        G1iCrufQjSagpMIQDYQgtEcgpeOQuxJQjCWhJChcaM6twOTPoMm1wCWhCnYer6r7FVQ0iwrbMoSDEcgc
+        pB/EqPKk0XD+Oxov5KPFl4H52k9oxhYh6n37TwLLLGT2OAT9YUiH82a19xs0lzLY61vF/uk1WG//Rqf/
+        B5T0F4ht896CNS/CQw5YiIYI+0gCqrNp7L6cQcuVNRy5lYXtfhZabxyyoa+M1P55Z8G2IaGVgdqVhISO
+        5Vi5cg3+dRyf+YO2q79Q44qm5I6QsXC9WKQhaCJGjr2BvG6+sQ7T9VXUk9HWjLBexWii9CJxCFpPCntI
+        l9unM2h0h1BNBRm5I1xc7mYiW0ZmvALt+DIkJz+mCOfW5W4mMgWyYW8gOvbOKz4xv43fmcf7C7UoYtfl
+        WbshAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="steamAudioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>629, 17</value>
-  </metadata>
   <metadata name="steamAudioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 17</value>
   </metadata>
@@ -218,28 +209,22 @@
   </data>
   <data name="activateMonitorPanelButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJaSURBVDhPlZNtT1JhGMf5CH2E3oQPyKMICj4QhbnCYPkwKB2YFaZo5wihYhKV1QtemBvVetWq
-        ldXWaGu1HrTTatlaK3MojweQikxfRN/g332AzTaU5X+73pz7/l/39buu6/A47TpwJ8DX3wX/4MzNMuOD
-        HbmP2xG/9R6O+pJopj5A0BnIlrcHrIWj/1OZ8SE6vDE0O0MwjIeh6GVQaXrCVJqfSgpXSqu87REOeeKo
-        6VtE7UAQOlcMGnoJIsscBF0vpqq6X5bGquh4DMNEHIr+IJT2JdQOLUNNR6Bzp1BPLUDcw2SFlrmtsUi5
-        0J9h8+ZTIdTRYagcEahPR6GbSKJ1MgXl4CcIexiGRDFW5eFnaHGzObNqOIw6ZxRyOgoZCQkVg9zJYt9k
-        GvqLLKr73nOJpoTW1xtYgq7n0I0moKTCEA2EILRHIKXjkLsSUIwloSQoXGjOrcDkz6DJtcAloQp2Hq+q
-        +xVUNIsK2zKEgxHIHKQfxKjypNFw/jsaL+SjxZeB+dpPaMYWIep9+08Cyyxk9jgE/WFIh/NmtfcbNJcy
-        2Otbxf7pNVhv/0an/weU9BeIbfPegjUvwkMOWIiGCPtIAqqzaey+nEHLlTUcuZWF7X4WWm8csqGvjNT+
-        eWfBtiGhlYHalYSEjuVYuXIN/nUcn/mDtqu/UOOKpuSOkLFwvVikIWgiRo69gbxuvrEO0/VV1JPR1oyw
-        XsVoovQicQhaTwp7SJfbpzNodIdQTQUZuSNcXO5mIltGZrwC7fgyJCc/pgjn1uVuJjIFsmFvIDr2zis+
-        Mb+N35nH+wu1KGLX5Vm7IQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAlpJREFUOE+V
+        k21PUmEYx/kIfYTehA/IowgKPhCFucJg+TAoHZgVpmjnCKFiEpXVC16YG9V61aqV1dZoa7UetNNq2Vor
+        cyiPB5CKTF9E3+DffYDNNpTlf7venPv+X/f1u67r8DjtOnAnwNffBf/gzM0y44MduY/bEb/1Ho76kmim
+        PkDQGciWtweshaP/U5nxITq8MTQ7QzCMh6HoZVBpesJUmp9KCldKq7ztEQ554qjpW0TtQBA6Vwwaegki
+        yxwEXS+mqrpflsaq6HgMw0Qciv4glPYl1A4tQ01HoHOnUE8tQNzDZIWWua2xSLnQn2Hz5lMh1NFhqBwR
+        qE9HoZtIonUyBeXgJwh7GIZEMVbl4WdocbM5s2o4jDpnFHI6ChkJCRWD3Mli32Qa+ossqvvec4mmhNbX
+        G1iCrufQjSagpMIQDYQgtEcgpeOQuxJQjCWhJChcaM6twOTPoMm1wCWhCnYer6r7FVQ0iwrbMoSDEcgc
+        pB/EqPKk0XD+Oxov5KPFl4H52k9oxhYh6n37TwLLLGT2OAT9YUiH82a19xs0lzLY61vF/uk1WG//Rqf/
+        B5T0F4ht896CNS/CQw5YiIYI+0gCqrNp7L6cQcuVNRy5lYXtfhZabxyyoa+M1P55Z8G2IaGVgdqVhISO
+        5Vi5cg3+dRyf+YO2q79Q44qm5I6QsXC9WKQhaCJGjr2BvG6+sQ7T9VXUk9HWjLBexWii9CJxCFpPCntI
+        l9unM2h0h1BNBRm5I1xc7mYiW0ZmvALt+DIkJz+mCOfW5W4mMgWyYW8gOvbOKz4xv43fmcf7C7UoYtfl
+        WbshAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="defaultAudioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>428, 17</value>
-  </metadata>
-  <metadata name="defaultAudioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>428, 17</value>
-  </metadata>
-  <metadata name="defaultDisplayBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>220, 17</value>
   </metadata>
   <metadata name="defaultDisplayBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>220, 17</value>
