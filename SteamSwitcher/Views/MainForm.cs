@@ -37,7 +37,8 @@ namespace SteamSwitcher.Views
                         SteamAudio = steamAudioBindingSource.Current as Device,
                         DefaultDisplay = defaultDisplayBindingSource.Current as Device,
                         DefaultAudio = defaultAudioBindingSource.Current as Device,
-                        AutoBPMode = IsAutoBPChecked
+                        AutoBPMode = IsAutoBPChecked,
+                        OnlyAudioInAutoBPMode = IsOnlyAudioInBPModeChecked
                     };
             }
             set
