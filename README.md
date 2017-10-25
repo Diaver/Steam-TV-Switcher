@@ -7,7 +7,7 @@ Steam TV Switcher watch for Steam Big Picture mode and switch primary display an
 ## Releases
 
 ### October 24 2017: 
-Download Link: https://github.com/Diaver/Steam-TV-Switcher/releases/download/0.10.24/Steam_TV_Switch_24_10_2017.zip
+Download Link: https://github.com/Diaver/Steam-TV-Switcher/files/1413185/Steam_TV_Switch_24_10_2017.zip
 * Added Hot keys.
 * Added new setting Switch Only Audio In Big Picture Mode.
 * Couple of UI fixes
